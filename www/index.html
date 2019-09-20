@@ -8,10 +8,36 @@
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script> 
   </head>
 
   <body>
     <br />
+
+    <ons-page>
+      <div style="text-align: center; margin-top: 200px">
+      <p>
+      <ons-input id="username" placeholder="Username" modifier="underbar">
+      </ons-input>
+      </p>
+      <p>
+      <ons-input
+      id="password"
+      placeholder="Password"
+      type="password"
+      modifier="underbar">
+      </ons-input>
+      </p>
+      <p>
+      <ons-button>Sign in</ons-button>
+      </p>
+      </div>
+    </ons-page>
+
+
     <img src="images/shackletonicon.jpg" alt="Ernest Shackleton at Dulwich College">
     <h2>Ernest Shackleton (1874 - 1922)</h2>
 
