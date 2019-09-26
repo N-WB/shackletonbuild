@@ -12,40 +12,59 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script> 
+
+    <script>
+      function login() {
+        user = document.getElementById('username').value;
+        pass = document.getElementById('password').value;
+        if (user == "user" && pass == "pass") 
+        {
+          var navigator = document.getElementById('navigator');
+          navigator.resetToPage('shackleton.html');
+        }
+        else 
+        {
+          alert ("incorrect credentials");
+        };
+      }
+    </script>
   </head>
 
   <body>
-    <br />
+    <ons-navigator id="navigator">
+      <ons-page>
+        <div style="text-align: center; margin-top: 200px">
+        <p>
+        <ons-input id="username" placeholder="Username" modifier="underbar">
+        </ons-input>
+        </p>
+        <p>
+        <ons-input
+        id="password"
+        placeholder="Password"
+        type="password"
+        modifier="underbar">
+        </ons-input>
+        </p>
+        <p>
+        <ons-button onClick='login()'>Sign in</ons-button>
+        </p>
+        </div>
+      </ons-page>
+    </ons-navigator>
+    
+    <ons-template id="shackleton.html">
+      <ons-page id="shackleton">
+        <img src="images/shackletonicon.jpg" alt="Ernest Shackleton at Dulwich College">
+        <h2>Ernest Shackleton (1874 - 1922)</h2>
 
-    <ons-page>
-      <div style="text-align: center; margin-top: 200px">
-      <p>
-      <ons-input id="username" placeholder="Username" modifier="underbar">
-      </ons-input>
-      </p>
-      <p>
-      <ons-input
-      id="password"
-      placeholder="Password"
-      type="password"
-      modifier="underbar">
-      </ons-input>
-      </p>
-      <p>
-      <ons-button>Sign in</ons-button>
-      </p>
-      </div>
-    </ons-page>
+        <p>Sir Ernest Shackleton</a> was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.</p>
 
+        <p>He was one of the principal figures of the period known as the Heroic Age of Antartic Exploration. Educated at Dulwich College and having ignored his father's wishes that he become a doctor he joined the merchant navy. Of many quotes one of his most famous is,"Difficulties are just things to overcome, after all."</p>
 
-    <img src="images/shackletonicon.jpg" alt="Ernest Shackleton at Dulwich College">
-    <h2>Ernest Shackleton (1874 - 1922)</h2>
-
-    <p>Sir Ernest Shackleton</a> was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.</p>
-
-    <p>He was one of the principal figures of the period known as the Heroic Age of Antartic Exploration. Educated at Dulwich College and having ignored his father's wishes that he become a doctor he joined the merchant navy. Of many quotes one of his most famous is,"Difficulties are just things to overcome, after all."</p>
-
-    <p>During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia.</p>
+        <p>During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia.</p>
+      </ons-page>
+    </ons-template>
   </body>
 
 </html>
