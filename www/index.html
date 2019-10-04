@@ -14,50 +14,34 @@
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script> 
 
     <script>
-      function quiz() {
-        var navigator = document.getElementById('navigator');
-        navigator.pushPage('quiz.html');
-      }
+      function loadPage(page) {
+        document.getElementById('menu').close();
+        document.getElementById('navigator').bringPageTop(page, {animation: 'fade' });
+      };
     </script>
-    
+
   </head>
 
   <body>
-    <ons-navigator id="navigator">
-      <ons-page id="shackleton">
-        <ons-toolbar id="home-toolbar">
-          <div class="left">Home</div>
-          <div class="center" onClick ='quiz()'>Quiz</div>
-        </ons-toolbar>
 
-        <img src="images/shackletonicon.jpg" alt="Ernest Shackleton at Dulwich College">
-        <h2>Ernest Shackleton (1874 - 1922)</h2>
+      <ons-splitter> <!-- The side menu -->
+        <ons-splitter-side id="menu" collapse width="220px">
+          
+          <ons-page>
+            <ons-list>
+              <ons-list-item onclick="loadPage('quiz.html')"> Quiz</ons-list-item>
+            </ons-list>
+          </ons-page>
 
-        <p>Sir Ernest Shackleton</a> was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.</p>
+        </ons-splitter-side> <!-- Everything not in the side menu -->
 
-        <p>He was one of the principal figures of the period known as the Heroic Age of Antartic Exploration. Educated at Dulwich College and having ignored his father's wishes that he become a doctor he joined the merchant navy. Of many quotes one of his most famous is,"Difficulties are just things to overcome, after all."</p>
+        <ons-splitter-content>
 
-        <p>During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia.</p>
-      </ons-page>
-    </ons-navigator>
-    
-    <ons-template id="shackleton.html">
-      <ons-page id="shackleton">
-        <ons-toolbar id="home-toolbar">
-          <div class="left">Home</div>
-          <div class="center" onClick ='quiz()'>Quiz</div>
-        </ons-toolbar>
+          <ons-navigator id="navigator" page="shackleton.html">
+          </ons-navigator>
 
-        <img src="images/shackletonicon.jpg" alt="Ernest Shackleton at Dulwich College">
-        <h2>Ernest Shackleton (1874 - 1922)</h2>
-
-        <p>Sir Ernest Shackleton</a> was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.</p>
-
-        <p>He was one of the principal figures of the period known as the Heroic Age of Antartic Exploration. Educated at Dulwich College and having ignored his father's wishes that he become a doctor he joined the merchant navy. Of many quotes one of his most famous is,"Difficulties are just things to overcome, after all."</p>
-
-        <p>During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia.</p>
-      </ons-page>
-    </ons-template>
+        </ons-splitter-content>
+      </ons-splitter>
 
   </body>
 
