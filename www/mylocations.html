@@ -1,6 +1,14 @@
 <ons-page id="mylocations.html">
- 
-  <h3>My Locations</h3>
-  <p>There are currently no locations</p>
+
+  <script>
+    function show_title() {   
+      my_elem = document.getElementById('my_loc');
+      my_elem.innerHTML = LocalStorage.getItem("MonacaDulwichNWB-location");
+    }
+  </script>
+
+  <h2 align='center'>My Locations</h2>
+  <h3 id='my_loc'></h3>
+  <ons-button id = "Reveal Location" onClick = 'show_title()'>Refresh</ons-button>
 
 </ons-page>

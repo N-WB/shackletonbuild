@@ -1,6 +1,19 @@
 <ons-page id="addlocations.html">
    
-  <h3>Add Locations</h3>
-  <p>There are currently no locations</p>
+  <script>
+    function save_details() { 
+      title = document.getElementById('loc_title').value;
+      LocalStorage.setItem("MonacaDulwichNWB-location", title);
+    }
+  </script>
+
+  <ons-list>
+    <ons-list-header>Type in a name for your location</ons-list-header>
+      <p> <ons-input id="loc_title" modifier="underbar" placeholder= "Enter Location Name" ></ons-input></p>
+    <ons-list-header>Save the location</ons-list-header>
+    <ons-button id = "Save details" onClick = 'save_details()'>Save</onsbutton>
+  </ons-list>
+
+  <h3 id='ans'></h3>
 
 </ons-page>
